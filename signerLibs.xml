@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Signer" default="main" basedir=".">
+    
+    	<property name="lib.src" location="C:/Users/JMiraballes/Documents/NetBeansProjects/RequestApplet/Lib" />  
+        <property name="lib.dest" location="C:/Users/JMiraballes/Documents/NetBeansProjects/TestApplet/web/lib" />
+        
+        <property name="jar.bancard.src" location="C:/Users/JMiraballes/Documents/Proyectos/BANCARD/prototipo_firma/appFirma/lib" />  
+        <property name="jar.bancard.dest" location="C:/Users/JMiraballes/Documents/Proyectos/BANCARD/prototipo_firma/jars-actualizados" />             
+        
+        <property name="jar.hacienda.src" location="C:/Users/JMiraballes/Documents/Proyectos/Hacienda/Prototipo/appFirma/lib" />  
+        <property name="jar.hacienda.dest" location="C:/Users/JMiraballes/Documents/Proyectos/Hacienda/Prototipo/jars-actualizados" />  
+        
+        <property name="jar.cuba.src" location="C:/Users/JMiraballes/Documents/Proyectos/MieFirma/Firmados/docmanClient-1.0.0/lib" />  
+        <property name="jar.cuba.dest" location="C:/Users/JMiraballes/Documents/Proyectos/MieFirma/Firmados/libsFirmados" />                             
+        
+        <property name="jar.mirecibo.src" location="C:/Users/JMiraballes/Documents/NetBeansProjects/RequestApplet/dist" />  
+        <property name="jar.mirecibo.dest" location="C:/Users/JMiraballes/Documents/NetBeansProjects/TestApplet/web" />                                     
+
+        <property name="jar.ain.lib.src" location="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/AppletAplication/dist/lib" />  
+        <property name="jar.ain.lib.dest" location="C:/Users/JMiraballes/Documents/Proyectos/AIN/appletFirma/lib" />                                             
+        
+        <property name="jar.ain.applet.src" location="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/AppletAplication/dist/AppletAplication.jar" />  
+        <property name="jar.ain.applet.dest" location="C:/Users/JMiraballes/Documents/Proyectos/AIN/appletFirma/AppletAplication.jar" />                                                     
+                    	
+        <!-- keystore - alias - password-->
+        <property name="sign.key.store" location="C:/Users/JMiraballes/Documents/UtilesISA/Certs/NuevoKeystore/isa.keystore" />
+	<property name="sign.key.alias" value="isa" />
+	<property name="sign.key.storepass" value="isa123" />
+	<property name="sign.key.pass" value="isa123" />                         	
+                        
+	<target name="signlibsbancard">
+                
+		<signjar jar="${jar.bancard.src}/AbsoluteLayout.jar" signedjar="${jar.bancard.dest}/AbsoluteLayout.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>    
+                
+		<signjar jar="${jar.bancard.src}/activation.jar" signedjar="${jar.bancard.dest}/activation.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.bancard.src}/aopalliance-1.0.jar" signedjar="${jar.bancard.dest}/aopalliance-1.0.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.bancard.src}/axis.jar" signedjar="${jar.bancard.dest}/axis.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/axis-ant.jar" signedjar="${jar.bancard.dest}/axis-ant.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/bcpkix-jdk13-149.jar" signedjar="${jar.bancard.dest}/bcpkix-jdk13-149.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.bancard.src}/commons-codec-1.9.jar" signedjar="${jar.bancard.dest}/commons-codec-1.9.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>    
+                
+		<signjar jar="${jar.bancard.src}/commons-discovery-0.2.jar" signedjar="${jar.bancard.dest}/commons-discovery-0.2.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.bancard.src}/commons-httpclient-3.0.1.jar" signedjar="${jar.bancard.dest}/commons-httpclient-3.0.1.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/commons-logging-1.0.4.jar" signedjar="${jar.bancard.dest}/commons-logging-1.0.4.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>
+                
+		<signjar jar="${jar.bancard.src}/guice-2.0.jar" signedjar="${jar.bancard.dest}/guice-2.0.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.bancard.src}/guice-multibindings-2.0.jar" signedjar="${jar.bancard.dest}/guice-multibindings-2.0.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.bancard.src}/jaxrpc.jar" signedjar="${jar.bancard.dest}/jaxrpc.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.bancard.src}/jce-ext-jdk13-149.jar" signedjar="${jar.bancard.dest}/jce-ext-jdk13-149.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/log4j-1.2.8.jar" signedjar="${jar.bancard.dest}/log4j-1.2.8.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>     
+                
+		<signjar jar="${jar.bancard.src}/mail.jar" signedjar="${jar.bancard.dest}/mail.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/plugin.jar" signedjar="${jar.bancard.dest}/plugin.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>        
+                
+		<signjar jar="${jar.bancard.src}/saaj.jar" signedjar="${jar.bancard.dest}/saaj.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>      
+                
+		<signjar jar="${jar.bancard.src}/slf4j-api-1.7.7.jar" signedjar="${jar.bancard.dest}/slf4j-api-1.7.7.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/slf4j-simple-1.7.7.jar" signedjar="${jar.bancard.dest}/slf4j-simple-1.7.7.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/smartwrapper.jar" signedjar="${jar.bancard.dest}/smartwrapper.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.bancard.src}/SmartWrapperHelper.jar" signedjar="${jar.bancard.dest}/SmartWrapperHelper.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.bancard.src}/stax-api-1.0-2.jar" signedjar="${jar.bancard.dest}/stax-api-1.0-2.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>
+                
+		<signjar jar="${jar.bancard.src}/stax2-api-3.1.4.jar" signedjar="${jar.bancard.dest}/stax2-api-3.1.4.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>                
+                
+		<signjar jar="${jar.bancard.src}/trustedx-client-axis.jar" signedjar="${jar.bancard.dest}/trustedx-client-axis.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.bancard.src}/trustedx-client-axis-stub.jar" signedjar="${jar.bancard.dest}/trustedx-client-axis-stub.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/trustedx-provider.jar" signedjar="${jar.bancard.dest}/trustedx-provider.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.bancard.src}/woodstox-core-asl-4.4.0.jar" signedjar="${jar.bancard.dest}/woodstox-core-asl-4.4.0.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.bancard.src}/wsdl4j-1.5.1.jar" signedjar="${jar.bancard.dest}/wsdl4j-1.5.1.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.bancard.src}/xades4j-1.3.2.jar" signedjar="${jar.bancard.dest}/xades4j-1.3.2.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>      
+                
+		<signjar jar="${jar.bancard.src}/xerces-2_6_2.jar" signedjar="${jar.bancard.dest}/xerces-2_6_2.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.bancard.src}/xercesImpl.jar" signedjar="${jar.bancard.dest}/xercesImpl.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                
+		<signjar jar="${jar.bancard.src}/xml-apis.jar" signedjar="${jar.bancard.dest}/xml-apis.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+                
+		<signjar jar="${jar.bancard.src}/xmlsec-2.0.1.jar" signedjar="${jar.bancard.dest}/xmlsec-2.0.1.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>                     
+                                                                                                                                       
+	</target>
+        
+        <target name="signlibshacienda">
+		<signjar jar="${jar.hacienda.src}/AbsoluteLayout.jar" signedjar="${jar.hacienda.dest}/AbsoluteLayout.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>    
+                
+		<signjar jar="${jar.hacienda.src}/bcpkix-jdk15on-1.50.jar" signedjar="${jar.hacienda.dest}/bcpkix-jdk15on-1.50.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.hacienda.src}/bcprov-jdk15on-1.50.jar" signedjar="${jar.hacienda.dest}/bcprov-jdk15on-1.50.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.hacienda.src}/commons-codec-1.10.jar" signedjar="${jar.hacienda.dest}/commons-codec-1.10.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.hacienda.src}/gson-2.3.1.jar" signedjar="${jar.hacienda.dest}/gson-2.3.1.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.hacienda.src}/itextpdf-5.5.6.jar" signedjar="${jar.hacienda.dest}/itextpdf-5.5.6.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.hacienda.src}/itext-pdfa-5.5.6.jar" signedjar="${jar.hacienda.dest}/itext-pdfa-5.5.6.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.hacienda.src}/itext-xtra-5.5.6.jar" signedjar="${jar.hacienda.dest}/itext-xtra-5.5.6.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.hacienda.src}/swing-layout-1.0.4.jar" signedjar="${jar.hacienda.dest}/swing-layout-1.0.4.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>                                                                                  
+                                                                       
+        </target>
+        
+        <target name="signainlibs">
+		<signjar jar="${jar.ain.lib.src}/AbsoluteLayout.jar" signedjar="${jar.ain.lib.dest}/AbsoluteLayout.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.ain.lib.src}/bcpkix-jdk13-149.jar" signedjar="${jar.ain.lib.dest}/bcpkix-jdk13-149.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.ain.lib.src}/jce-ext-jdk13-149.jar" signedjar="${jar.ain.lib.dest}/jce-ext-jdk13-149.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.ain.lib.src}/plugin.jar" signedjar="${jar.ain.lib.dest}/plugin.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>                                                                             
+        </target>
+        
+        <target name="firmaAppletAIN">
+		<signjar jar="${jar.ain.applet.src}" signedjar="${jar.ain.applet.dest}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>              
+        </target>
+        
+        <target name="signMiefirmalibs">
+		<signjar jar="${jar.cuba.src}/aopalliance-1.0.jar" signedjar="${jar.cuba.dest}/aopalliance-1.0.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/classmate-1.0.0.jar" signedjar="${jar.cuba.dest}/classmate-1.0.0.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.cuba.src}/commons-io-1.3.2.jar" signedjar="${jar.cuba.dest}/commons-io-1.3.2.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>    
+                
+		<signjar jar="${jar.cuba.src}/hibernate-validator-5.1.3.Final.jar" signedjar="${jar.cuba.dest}/hibernate-validator-5.1.3.Final.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>       
+                
+		<signjar jar="${jar.cuba.src}/jackson-annotations-2.4.6.jar" signedjar="${jar.cuba.dest}/jackson-annotations-2.4.6.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/jackson-core-2.4.6.jar" signedjar="${jar.cuba.dest}/jackson-core-2.4.6.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.cuba.src}/jackson-databind-2.4.6.jar" signedjar="${jar.cuba.dest}/jackson-databind-2.4.6.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/jboss-logging-3.1.3.GA.jar" signedjar="${jar.cuba.dest}/jboss-logging-3.1.3.GA.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>    
+                
+		<signjar jar="${jar.cuba.src}/jcl-over-slf4j-1.7.12.jar" signedjar="${jar.cuba.dest}/jcl-over-slf4j-1.7.12.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/jul-to-slf4j-1.7.12.jar" signedjar="${jar.cuba.dest}/jul-to-slf4j-1.7.12.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/log4j-over-slf4j-1.7.12.jar" signedjar="${jar.cuba.dest}/log4j-over-slf4j-1.7.12.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>    
+                
+		<signjar jar="${jar.cuba.src}/logback-classic-1.1.3.jar" signedjar="${jar.cuba.dest}/logback-classic-1.1.3.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/logback-core-1.1.3.jar" signedjar="${jar.cuba.dest}/logback-core-1.1.3.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/slf4j-api-1.7.12.jar" signedjar="${jar.cuba.dest}/slf4j-api-1.7.12.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/snakeyaml-1.14.jar" signedjar="${jar.cuba.dest}/snakeyaml-1.14.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>
+                
+		<signjar jar="${jar.cuba.src}/spring-aop-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-aop-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>
+                
+		<signjar jar="${jar.cuba.src}/spring-beans-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-beans-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/spring-beans-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-beans-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-boot-1.2.5.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-boot-1.2.5.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.cuba.src}/spring-boot-autoconfigure-1.2.5.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-boot-autoconfigure-1.2.5.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/spring-boot-starter-1.2.5.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-boot-starter-1.2.5.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-boot-starter-logging-1.2.5.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-boot-starter-logging-1.2.5.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-boot-starter-tomcat-1.2.5.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-boot-starter-tomcat-1.2.5.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-boot-starter-web-1.2.5.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-boot-starter-web-1.2.5.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/spring-boot-starter-ws-1.2.5.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-boot-starter-ws-1.2.5.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/spring-context-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-context-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/spring-core-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-core-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-expression-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-expression-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-jms-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-jms-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>
+                
+		<signjar jar="${jar.cuba.src}/spring-messaging-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-messaging-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/spring-oxm-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-oxm-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>
+                
+		<signjar jar="${jar.cuba.src}/spring-tx-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-tx-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/spring-web-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-web-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-webmvc-4.1.7.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-webmvc-4.1.7.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-ws-core-2.2.1.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-ws-core-2.2.1.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/spring-ws-support-2.2.1.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-ws-support-2.2.1.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>   
+                
+		<signjar jar="${jar.cuba.src}/spring-xml-2.2.1.RELEASE.jar" signedjar="${jar.cuba.dest}/spring-xml-2.2.1.RELEASE.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/tomcat-embed-core-8.0.23.jar" signedjar="${jar.cuba.dest}/tomcat-embed-core-8.0.23.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/tomcat-embed-el-8.0.23.jar" signedjar="${jar.cuba.dest}/tomcat-embed-el-8.0.23.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+		<signjar jar="${jar.cuba.src}/tomcat-embed-logging-juli-8.0.23.jar" signedjar="${jar.cuba.dest}/tomcat-embed-logging-juli-8.0.23.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/tomcat-embed-websocket-8.0.23.jar" signedjar="${jar.cuba.dest}/tomcat-embed-websocket-8.0.23.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+                
+		<signjar jar="${jar.cuba.src}/validation-api-1.1.0.Final.jar" signedjar="${jar.cuba.dest}/validation-api-1.1.0.Final.jar"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                            
+        </target>
+        
+        
+        
+	<target name="main" depends="signlibsbancard,signlibshacienda">
+            <description>Main target</description>
+	</target>                      
+        
+</project>

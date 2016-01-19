@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Signer" default="main" basedir=".">
+    
+    <!-- Ruta a .jar RequestApplet -->
+    <property name="sign.folder.src.req" location="C:/Users/JMiraballes/Documents/NetBeansProjects/RequestApplet/dist/RequestApplet.jar" />
+    <property name="sign.folder.dest.req" location="C:/Users/JMiraballes/Documents/NetBeansProjects/RequestApplet/dist/RequestApplet.jar" />    
+     
+    <!-- Ruta a AppletApplication.jar -->
+    <property name="sign.folder.app.dest" location="C:/Users/JMiraballes/Documents/NetBeansProjects/AppletAplication/dist/AppletAplication.jar"/>  
+    <property name="sign.folder.iscert" location="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/SignISCert/dist/SignISCert.jar"/>     
+    
+    <!-- Path a libs de RequestApplet y AppletApplication -->
+    <property name="lib.dest.copy.req.lib" location="C:/Users/JMiraballes/Documents/NetBeansProjects/RequestApplet/Lib"/>
+    <property name="lib.dest.copy.sign.lib" location="C:/Users/JMiraballes/Documents/NetBeansProjects/AppletAplication/Lib"/>
+    <property name="lib.dest.copy.isCert.lib" location="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/SignISCert/Lib"/>
+    
+   
+    <!-- Ruta a .jar SmartWrapperHelper -->
+    <property name="sign.folder.src.smah" location="C:/Users/JMiraballes/Documents/NetBeansProjects/SmartWrapperHelper/dist/SmartWrapperHelper.jar" />
+    <property name="sign.folder.dest.smah" location="C:/Users/JMiraballes/Documents/NetBeansProjects/SmartWrapperHelper/dist/SmartWrapperHelper.jar" />
+    
+    
+    <!-- keystore -->      
+    <property name="sign.key.store" location="C:/Users/JMiraballes/Documents/UtilesISA/Certs/NuevoKeystore/isa.keystore" />
+    
+    <!-- alias para el archivo de certificado -->      
+    <property name="sign.key.alias" value="isa" />
+    <!-- storepass: clave que es requerida para acceder al keystore: 123456 -->
+    <property name="sign.key.storepass" value="isa123" />
+    <!-- keypass: clave usada para proteger la clave privada del archivo keystore: isa123-->
+    <property name="sign.key.pass" value="isa123" />
+    
+    <target name="signSWrapperHelper">
+		<signjar jar="${sign.folder.src.smah}" signedjar="${sign.folder.dest.smah}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>
+                    <delete file="${lib.dest.copy.req.lib}/SmartWrapperHelper.jar"/>
+                    <delete file="${lib.dest.copy.sign.lib}/SmartWrapperHelper.jar"/>
+                    <delete file="${lib.dest.copy.isCert.lib}/SmartWrapperHelper.jar"/>
+                    
+                    <copy file="${sign.folder.src.smah}" todir="${lib.dest.copy.req.lib}"/>
+                    <copy file="${sign.folder.src.smah}" todir="${lib.dest.copy.sign.lib}"/>
+                    <copy file="${sign.folder.src.smah}" todir="${lib.dest.copy.isCert.lib}"/>
+    </target>    
+    
+    <target name="signRequestApplet">
+		<signjar jar="${sign.folder.src.req}" signedjar="${sign.folder.dest.req}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>        
+    </target>
+    
+    <target name="signAppletApplication">
+		<signjar jar="${sign.folder.app.dest}" signedjar="${sign.folder.app.dest}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/>  
+    </target>
+    
+    
+    <target name="prototipoBancard">
+		<signjar jar="${sign.folder.iscert}" signedjar="${sign.folder.iscert}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+                <!--<delete file="C:/Users/JMiraballes/Documents/Proyectos/BANCARD/prototipo_firma/appFirma/SignISCert.jar"/>-->
+                <copy file="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/SignISCert/dist/SignISCert.jar" 
+                      todir="C:/Users/JMiraballes/Documents/Proyectos/BANCARD/prototipo_firma/appFirma"/> 
+    </target> 
+    
+    <property name="sign.folder.pades" location="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/ProtitpoPAdES/dist/FirmaPAdES.jar"/> 
+    <target name="prototipoHacienda">
+		<signjar jar="${sign.folder.pades}" signedjar="${sign.folder.pades}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+                <copy file="${sign.folder.pades}" 
+                      todir="C:/Users/JMiraballes/Documents/Proyectos/Hacienda/Prototipo/appFirma"/> 
+    </target>  
+    
+    <property name="sign.folder.aduana" location="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/FirmaAduana/dist/FirmaAduana.jar"/> 
+    <target name="prototipoAduana">
+		<signjar jar="${sign.folder.aduana}" signedjar="${sign.folder.aduana}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+                <copy file="${sign.folder.aduana}" 
+                      todir="C:/Users/JMiraballes/Documents/Proyectos/Aduana/Prototipo/appFirma"/> 
+    </target>      
+    
+    <property name="sign.folder.mirecibo" location="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/FirmaMiRecibo/dist/FirmaMiRecibo.jar"/> 
+    <target name="prototipoMiRecibo">
+		<signjar jar="${sign.folder.mirecibo}" signedjar="${sign.folder.mirecibo}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+                <copy file="${sign.folder.mirecibo}" 
+                      todir="C:/Users/JMiraballes/Documents/Proyectos/EventoGX/prototipo/appFirma"/> 
+                <copy file="${sign.folder.mirecibo}" 
+                      todir="C:/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/mirecibo/appFirma"/>                 
+    </target>     
+
+    <property name="sign.folder.miefirma" location="C:/Users/JMiraballes/Documents/NetBeansProjects/NetbeansProyect2/MieFirma/dist/MieFirma.jar"/> 
+    <target name="prototipoMieFirma">
+		<signjar jar="${sign.folder.miefirma}" signedjar="${sign.folder.miefirma}"
+					alias="${sign.key.alias}" storepass="${sign.key.storepass}" keystore="${sign.key.store}"
+		  				keypass="${sign.key.pass}"/> 
+                
+                <copy file="${sign.folder.miefirma}" 
+                      todir="C:/Users/JMiraballes/Documents/Proyectos/MieFirma/Prototipo/appFirma"/> 
+    </target>         
+                                                                            
+    
+    
+<!--    <target name="main" depends="signRequestApplet,signSWrapperHelper,signAppletApplication">
+        <description>Main target</description>
+    </target>     -->
+</project>
